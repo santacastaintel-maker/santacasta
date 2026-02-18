@@ -1,0 +1,8 @@
+{
+  "name": "SantaCasta - AI Agency",
+  "description": "A high-conversion landing page for SantaCasta, an AI automation agency, featuring an AI-powered strategy assistant.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
