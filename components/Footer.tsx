@@ -3,32 +3,47 @@ import React from 'react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="px-6 py-20 bg-bg-dark text-white rounded-t-[3rem] mt-12 relative overflow-hidden">
-      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
-      
-      <div className="relative z-10 flex flex-col items-center text-center gap-8 max-w-2xl mx-auto">
-        <div className="w-20 h-20 bg-primary/10 rounded-3xl flex items-center justify-center mb-4">
-          <span className="material-symbols-outlined text-primary text-5xl animate-bounce">rocket_launch</span>
-        </div>
-        
-        <h2 className="text-4xl md:text-5xl font-serif font-bold leading-tight">¿Listo para escalar?</h2>
-        <p className="text-white/60 text-lg">Hablemos de cómo la IA puede potenciar tu negocio hoy mismo.</p>
-        
-        <button className="w-full h-16 bg-primary hover:bg-primary-dark text-bg-dark font-bold text-xl rounded-2xl shadow-2xl shadow-primary/30 transition-all transform hover:-translate-y-1 active:scale-95">
+    <footer className="relative bg-evergreen text-frost overflow-hidden">
+      {/* Top blob */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-moss/30 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-honey/10 rounded-full blur-[80px] pointer-events-none" />
+
+      <div className="relative z-10 max-w-4xl mx-auto px-6 py-24 flex flex-col items-center text-center gap-8">
+        {/* Logo */}
+        <img
+          src="/logo_casta_intel.png"
+          alt="SantaCasta"
+          className="w-16 h-16 object-contain rounded-full ring-2 ring-honey/30 animate-float"
+        />
+
+        {/* Headline */}
+        <h2 className="font-serif font-bold leading-tight" style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)' }}>
+          ¿Listo para escalar<br />
+          <em className="not-italic text-honey">con IA?</em>
+        </h2>
+        <p className="text-frost/50 text-lg max-w-md font-light">
+          Hablemos de cómo la IA puede potenciar tu negocio hoy mismo.
+        </p>
+
+        {/* CTA */}
+        <button className="group flex items-center gap-3 bg-honey text-evergreen font-bold text-lg px-10 py-5 rounded-2xl shadow-honey hover:bg-amber-300 transition-all duration-300 hover:-translate-y-1 active:scale-95">
           Agendar Auditoría Gratis
+          <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_outward</span>
         </button>
 
-        <div className="flex gap-10 mt-12 text-sm font-semibold tracking-wider uppercase">
-          <a href="#" className="text-white/50 hover:text-primary transition-colors">LinkedIn</a>
-          <a href="#" className="text-white/50 hover:text-primary transition-colors">Instagram</a>
-          <a href="#" className="text-white/50 hover:text-primary transition-colors">Email</a>
+        {/* Social links */}
+        <div className="flex gap-8 mt-8 text-sm font-semibold tracking-wider uppercase">
+          {['LinkedIn', 'Instagram', 'Email'].map(link => (
+            <a key={link} href="#" className="text-frost/30 hover:text-honey transition-colors duration-200">{link}</a>
+          ))}
         </div>
 
-        <div className="mt-16 pt-8 border-t border-white/5 w-full flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/30 uppercase tracking-widest">
-          <p>© 2024 SantaCasta. All rights reserved.</p>
+        {/* Divider */}
+        <div className="w-full border-t border-white/10 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-frost/20 uppercase tracking-widest">
+          <p>© 2026 SantaCasta. All rights reserved.</p>
           <div className="flex gap-6">
-            <a href="#">Privacy</a>
-            <a href="#">Terms</a>
+            <a href="#" className="hover:text-frost/50 transition-colors">Privacy</a>
+            <a href="#" className="hover:text-frost/50 transition-colors">Terms</a>
           </div>
         </div>
       </div>
